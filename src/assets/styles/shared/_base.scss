@@ -1,0 +1,33 @@
+@import "./responsive";
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  color: var(--clr-neutral-800);
+  background-color: var(--clr-neutral-300);
+
+  @include media(mobile) {
+    font-size: var(--fs-350);
+    line-height: var(--size-600);
+  }
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  main {
+    .container {
+      width: 730px;
+      padding: 2rem 2rem 0 2rem; 
+      border-radius: 1rem;
+
+      @include media(mobile) {
+        width: 100vw;
+        padding: 1rem 1rem 0 1rem; 
+      }
+    }
+  }
+}
