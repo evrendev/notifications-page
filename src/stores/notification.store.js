@@ -71,7 +71,7 @@ export const useNotificationStore = defineStore("notificationStore", {
         unread: false,
         private: false,
         comment: true,
-        image: "image-chess",
+        image: "chess",
         message: null,
       },
       {

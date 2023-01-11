@@ -1,9 +1,13 @@
 <script>
 import { ref } from "vue";
 import { useNotificationStore } from "@/stores";
+import DynamicImage from "./DynamicImage.vue";
 
 export default {
   name: "NotificationItem",
+  components: {
+    DynamicImage,
+  },
   props: {
     notification: {
       type: Object,
@@ -13,11 +17,8 @@ export default {
   setup(props) {
     const notificationStore = useNotificationStore();
 
-    let avatarImgPath = `../assets/images/avatar-${props.notification.profile.avatar}.webp`;
-    let avatarSrc = ref(new URL(avatarImgPath, import.meta.url).href);
-
-    let profileImgPath = `../assets/images/${props.notification.image}.webp`;
-    let profileImgSrc = ref(new URL(profileImgPath, import.meta.url).href);
+    let avatarSrc = ref(`avatar-${props.notification.profile.avatar}.webp`);
+    let profileImgSrc = ref(`image-${props.notification.image}.webp`);
 
     const markAsRead = (id) => {
       notificationStore.markAsRead(id);
@@ -40,7 +41,7 @@ export default {
   >
     <div>
       <div class="avatar">
-        <img :src="avatarSrc" :alt="notification.profile.name" />
+        <dynamic-image :image="avatarSrc" :alt="notification.profile.name" />
       </div>
     </div>
     <div class="flex flex-direction-column">
@@ -55,7 +56,7 @@ export default {
       ></div>
     </div>
     <div class="profile-image" v-if="notification.comment">
-      <img :src="profileImgSrc" :alt="notification.profile.name" />
+      <dynamic-image :image="profileImgSrc" :alt="notification.profile.name" />
     </div>
   </div>
 </template>
