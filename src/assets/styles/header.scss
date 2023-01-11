@@ -1,36 +1,36 @@
 @import "./shared/responsive";
 
 header {
-    margin-bottom: var(--size-900);
-  
-    h3 {
-      @include media(mobile) {
-        font-size: var(--fs-600);
-        line-height: var(--size-700);
-      }
-    }
-  
-    span {
-      width: var(--size-900);
-      height: var(--size-700);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      margin-left: var(--size-300);
-      border-radius: var(--size-100);
+  margin-bottom: var(--size-900);
 
-      @include media(mobile) {
-      margin-left: var(--size-100);
-      }
-    }
-  
-    a {
-      line-height: var(--size-600);
-
-      @include media(mobile) {
-        font-size: var(--fs-350);
-        line-height: var(--size-500);
-      }
+  h3 {
+    @include media(mobile) {
+      font-size: var(--fs-600);
+      line-height: var(--size-700);
     }
   }
+
+  span {
+    width: var(--size-900);
+    height: var(--size-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: var(--size-300);
+    border-radius: var(--size-100);
+
+    @include media(mobile) {
+      margin-left: var(--size-100);
+    }
+  }
+
+  a {
+    line-height: var(--size-600);
+
+    @include media(mobile) {
+      font-size: var(--fs-350);
+      line-height: var(--size-500);
+    }
+  }
+}
