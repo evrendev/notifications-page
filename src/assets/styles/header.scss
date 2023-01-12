@@ -3,7 +3,7 @@
 header {
   margin-bottom: var(--size-900);
 
-  h3 {
+  h1 {
     @include media(mobile) {
       font-size: var(--fs-600);
       line-height: var(--size-700);

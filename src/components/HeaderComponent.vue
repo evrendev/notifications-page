@@ -1,7 +1,7 @@
 <template>
   <header class="flex align-items-center justify-content-space-between">
     <div class="flex align-items-center">
-      <h3 class="fw-bold fs-900">Notifications</h3>
+      <h1 class="fw-bold fs-900">Notifications</h1>
       <span class="bg-primary-700 text-neutral-100 fw-bold" v-if="allNotificationsIsReaded">
         {{ notificationsCount }}
       </span>
