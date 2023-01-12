@@ -2,7 +2,9 @@
   <header class="flex align-items-center justify-content-space-between">
     <div class="flex align-items-center">
       <h3 class="fw-bold fs-900">Notifications</h3>
-      <span class="bg-primary-700 text-neutral-100 fw-bold"> 3 </span>
+      <span class="bg-primary-700 text-neutral-100 fw-bold" v-if="allNotificationsIsReaded">
+        {{ notificationsCount }}
+      </span>
     </div>
     <div>
       <a
@@ -23,13 +25,13 @@ import { storeToRefs } from "pinia";
 export default {
   setup() {
     const notificationStore = useNotificationStore();
-    const { allNotificationsIsReaded } = storeToRefs(notificationStore);
+    const { allNotificationsIsReaded, notificationsCount } = storeToRefs(notificationStore);
 
     const markAllAsRead = () => {
       notificationStore.markAllAsRead(!allNotificationsIsReaded.value);
     };
 
-    return { markAllAsRead, allNotificationsIsReaded };
+    return { markAllAsRead, notificationsCount, allNotificationsIsReaded };
   },
 };
 </script>

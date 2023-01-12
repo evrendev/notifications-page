@@ -117,5 +117,8 @@ export const useNotificationStore = defineStore("notificationStore", {
     allNotificationsIsReaded() {
       return this.notifications.some((notification) => notification.unread == true);
     },
+    notificationsCount() {
+      return this.notifications.filter((notification) => notification.unread == true).length;
+    },
   },
 });
